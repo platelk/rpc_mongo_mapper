@@ -4,6 +4,7 @@ description: >
   rpc_mongo_mapper is a package that allow you to easily provide CRUD operation to a class
   with rpc and store its representation inside mongodb
 author: ProfileRH, PLATEL Kevin <platel.kevin@gmail.com>
+homepage: https://github.com/ProfileRH/rpc_mongo_mapper
 dependencies:
   rpc: any
   mongo_dart: "^0.2.4"
