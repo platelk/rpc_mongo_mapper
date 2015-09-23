@@ -2,6 +2,7 @@
 .buildlog
 .pub/
 build/
+doc/api/
 packages
 
 # Or the files created by dart2js.
@@ -12,3 +13,4 @@ packages
 
 # Include when developing application packages.
 pubspec.lock
+.packages
