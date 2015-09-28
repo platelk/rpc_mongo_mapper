@@ -173,7 +173,7 @@ class MongoMapper<T> {
  /// access : GET http://<server_ip>:<server_port>/<your>/<api>/<path>/data?filter=<your filter>&limit=<limit_nb_entry>
  ///
   @ApiMethod(path: "${accessKey}", method: 'GET')
-//  @Register()
+  @Register()
 //  @ApiPlugin(plugin: "auth")
   Future<List<T>> getModel({String filter, int limit}) async {
     var ret = applyHandler(beforeGet, [null, filter, null]);
@@ -198,7 +198,7 @@ class MongoMapper<T> {
    /// access : GET http://<server_ip>:<server_port>/<your>/<api>/<path>/data/<id>?filter=<your filter>&limit=<limit_nb_entry>
    ///
   @ApiMethod(path: "${accessKey}/{id}", method: 'GET')
-//  @Register()
+  @Register()
 //  @ApiPlugin(plugin: "auth")
   Future<T> getModelById(String id, {String filter, int limit}) async {
     var ret = applyHandler(beforeGet, [id, filter, null]);
@@ -225,7 +225,7 @@ class MongoMapper<T> {
    /// access : POST http://<server_ip>:<server_port>/<your>/<api>/<path>/data
    ///
   @ApiMethod(path: accessKey, method: 'POST')
-//  @Register()
+  @Register()
 //  @ApiPlugin(plugin: "auth")
   Future<T> postModel(T model) async {
     var ret = applyHandler(beforePost, [null, null, model]);
@@ -247,7 +247,7 @@ class MongoMapper<T> {
    /// access : DELETE http://<server_ip>:<server_port>/<your>/<api>/<path>/data?filter=<your_filter>
    ///
   @ApiMethod(path: accessKey, method: 'DELETE')
-//  @Register()
+  @Register()
 //  @ApiPlugin(plugin: "auth")
   Future<T> deleteModel({String filter}) async {
     var ret = applyHandler(beforeDelete, [null, filter, null]);
@@ -265,7 +265,7 @@ class MongoMapper<T> {
    /// access : DELETE http://<server_ip>:<server_port>/<your>/<api>/<path>/data?filter=<your_filter>
    ///
   @ApiMethod(path: "${accessKey}/{id}", method: 'DELETE')
-//  @Register()
+  @Register()
 //  @ApiPlugin(plugin: "auth")
   Future<Map<String, String>> deleteModelId(String id) async {
     var ret = applyHandler(beforeDelete, [id, null, null]);
@@ -284,7 +284,7 @@ class MongoMapper<T> {
    /// access : PUT http://<server_ip>:<server_port>/<your>/<api>/<path>/data
    ///
   @ApiMethod(path: "${accessKey}/{id}", method: 'PUT')
-//  @Register()
+  @Register()
 //  @ApiPlugin(plugin: "auth")
   Future<T> updateModel(String id, T model) async {
     var ret = applyHandler(beforePut, [null, null, model]);
@@ -313,7 +313,7 @@ class MongoMapper<T> {
    /// access : PATCH http://<server_ip>:<server_port>/<your>/<api>/<path>/data
    ///
   @ApiMethod(path: "${accessKey}/{id}", method: 'PATCH')
-//  @Register()
+  @Register()
 //  @ApiPlugin(plugin: "auth")
   VoidMessage patchModel(String id, T model) {
     collec.update(_createFilter("{}", id: id), toJson(model));
