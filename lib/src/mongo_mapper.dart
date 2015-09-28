@@ -174,7 +174,7 @@ class MongoMapper<T> {
  ///
   @ApiMethod(path: "${accessKey}", method: 'GET')
   @Register()
-//  @ApiPlugin(plugin: "auth")
+  @ApiPlugin(plugin: "auth")
   Future<List<T>> getModel({String filter, int limit}) async {
     var ret = applyHandler(beforeGet, [null, filter, null]);
 
@@ -199,7 +199,7 @@ class MongoMapper<T> {
    ///
   @ApiMethod(path: "${accessKey}/{id}", method: 'GET')
   @Register()
-//  @ApiPlugin(plugin: "auth")
+  @ApiPlugin(plugin: "auth")
   Future<T> getModelById(String id, {String filter, int limit}) async {
     var ret = applyHandler(beforeGet, [id, filter, null]);
     if (ret != null) return ret;
@@ -226,7 +226,7 @@ class MongoMapper<T> {
    ///
   @ApiMethod(path: accessKey, method: 'POST')
   @Register()
-//  @ApiPlugin(plugin: "auth")
+  @ApiPlugin(plugin: "auth")
   Future<T> postModel(T model) async {
     var ret = applyHandler(beforePost, [null, null, model]);
     if (ret != null) return ret;
@@ -248,7 +248,7 @@ class MongoMapper<T> {
    ///
   @ApiMethod(path: accessKey, method: 'DELETE')
   @Register()
-//  @ApiPlugin(plugin: "auth")
+  @ApiPlugin(plugin: "auth")
   Future<T> deleteModel({String filter}) async {
     var ret = applyHandler(beforeDelete, [null, filter, null]);
     if (ret != null) return ret;
@@ -266,7 +266,7 @@ class MongoMapper<T> {
    ///
   @ApiMethod(path: "${accessKey}/{id}", method: 'DELETE')
   @Register()
-//  @ApiPlugin(plugin: "auth")
+  @ApiPlugin(plugin: "auth")
   Future<Map<String, String>> deleteModelId(String id) async {
     var ret = applyHandler(beforeDelete, [id, null, null]);
     if (ret != null) return ret;
@@ -285,7 +285,7 @@ class MongoMapper<T> {
    ///
   @ApiMethod(path: "${accessKey}/{id}", method: 'PUT')
   @Register()
-//  @ApiPlugin(plugin: "auth")
+  @ApiPlugin(plugin: "auth")
   Future<T> updateModel(String id, T model) async {
     var ret = applyHandler(beforePut, [null, null, model]);
     if (ret != null) return ret;
@@ -314,7 +314,7 @@ class MongoMapper<T> {
    ///
   @ApiMethod(path: "${accessKey}/{id}", method: 'PATCH')
   @Register()
-//  @ApiPlugin(plugin: "auth")
+  @ApiPlugin(plugin: "auth")
   VoidMessage patchModel(String id, T model) {
     collec.update(_createFilter("{}", id: id), toJson(model));
     return null;
