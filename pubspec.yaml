@@ -10,7 +10,7 @@ environment:
 dependencies:
   rpc: "0.5.6"
   mongo_dart: "^0.2.5+1"
-  amqp_rpc_binder: "^0.1.0"
+  amqp_rpc_binder: "^0.1.1"
   logging: "0.11.2"
 dependency_overrides:
   logging: "0.11.2" # dart_amqp package depends of '>=0.9.3 <0.10.0'
